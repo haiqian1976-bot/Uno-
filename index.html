@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNO: Human vs CPU</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Browser UNO</p>
+        <h1>UNO Battle</h1>
+        <p class="subtitle">Human vs CPU · Classic or No Mercy · No stacking</p>
+      </div>
+
+      <section class="controls">
+        <label for="modeSelect">Mode</label>
+        <select id="modeSelect">
+          <option value="classic">Classic UNO</option>
+          <option value="mercy">No Mercy</option>
+        </select>
+        <button id="restartBtn" type="button">Restart</button>
+      </section>
+    </header>
+
+    <section class="scoreboard">
+      <div class="stat">
+        <span>CPU Cards</span>
+        <strong id="cpuCount">7</strong>
+      </div>
+      <div class="stat">
+        <span>Your Cards</span>
+        <strong id="playerCount">7</strong>
+      </div>
+      <div class="stat">
+        <span>Draw Pile</span>
+        <strong id="drawCount">0</strong>
+      </div>
+    </section>
+
+    <section class="table">
+      <div class="cpu-zone">
+        <div id="cpuHand" class="cpu-hand"></div>
+      </div>
+
+      <div class="center-zone">
+        <div class="pile-card draw-pile" id="drawPileBtn" role="button" tabindex="0">
+          <span>UNO</span>
+          <small>Draw</small>
+        </div>
+
+        <div class="discard-wrap">
+          <p>Current discard card</p>
+          <div id="discardCard" class="card big-card"></div>
+        </div>
+      </div>
+
+      <div class="status-panel">
+        <h2 id="turnText">Your turn</h2>
+        <p id="messageText">Play a matching color, number, or symbol.</p>
+
+        <div id="colorPicker" class="color-picker hidden">
+          <button class="red" data-color="red">Red</button>
+          <button class="yellow" data-color="yellow">Yellow</button>
+          <button class="green" data-color="green">Green</button>
+          <button class="blue" data-color="blue">Blue</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="hand-section">
+      <h2>Your hand</h2>
+      <div id="playerHand" class="player-hand"></div>
+    </section>
+
+    <section class="log-section">
+      <h2>Game log</h2>
+      <ol id="gameLog" class="game-log"></ol>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
